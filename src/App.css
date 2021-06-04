@@ -6,7 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.list-cards {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-User card {
+  background-color: #61dafb;
+  justify-content: space-around;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
