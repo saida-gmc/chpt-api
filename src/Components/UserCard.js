@@ -6,7 +6,7 @@ const UserCard = ({ user }) => {
     <div>
       <Card className="card-User">
         <Card.Body>
-          <img src="/userlogo.png" width="35%" />
+          <img src="/userlogo.png" alt="user" width="35%" />
 
           <Card.Title className="cardtitle" tag="h5">
             {user.name}

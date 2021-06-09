@@ -7,7 +7,6 @@ import DetailsUser from "./Components/DetailsUser";
 
 export default function App() {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,7 +14,6 @@ export default function App() {
           "https://jsonplaceholder.typicode.com/users"
         );
         setUsers(res.data);
-        setLoading(false);
       } catch (error) {
         console.log("err");
       }
@@ -24,19 +22,11 @@ export default function App() {
   }, []);
   return (
     <div>
-    
-      <Route
-        exact
-        path="/"
-        render={() => <UserList users={users} />}
-      />
+      <Route exact path="/" render={() => <UserList users={users} />} />
       <Route
         path="/details/:userId"
-        render={(props) => (
-          <DetailsUser {...props} users={users} />
-        )}
+        render={(props) => <DetailsUser {...props} users={users} />}
       />
-      
     </div>
   );
 }
